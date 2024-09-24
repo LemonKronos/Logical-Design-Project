@@ -64,8 +64,8 @@ all: main-build
 main-build: TEST.elf secondary-outputs
 
 # Tool invocations
-TEST.elf: $(OBJS) $(USER_OBJS) D:\App\STM32CubeIDE_1.7.0\Workspace_1\TEST\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "TEST.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\App\STM32CubeIDE_1.7.0\Workspace_1\TEST\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+TEST.elf: $(OBJS) $(USER_OBJS) C:\Users\TRONG\ DAT\Documents\[\ BÁCKHOA\ ]\Đồ\ án\ thiết\ kế\ luận\ lý\Code\ Đồ\ án\TEST\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "TEST.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\TRONG DAT\Documents\[ BÁCKHOA ]\Đồ án thiết kế luận lý\Code Đồ án\TEST\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

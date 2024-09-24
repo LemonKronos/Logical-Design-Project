@@ -94,11 +94,13 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  uint8_t text_buff;
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  SEND_DATA(&text_buff, 2);
   }
   /* USER CODE END 3 */
 }
