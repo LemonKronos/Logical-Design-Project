@@ -14,8 +14,7 @@
 
 enum ERROR_CODE{
 	OK,
-	NO_UART,
-	huh
+	SEND_FAILED
 };
 
 enum ERROR_CODE SEND_DATA(uint8_t* text_buff, UART_HandleTypeDef* gate);

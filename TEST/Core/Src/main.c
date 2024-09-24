@@ -94,13 +94,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  uint8_t text_buff;
+  uint8_t text_buff[50] ="BRUH\n\r";
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  SEND_DATA(&text_buff, 2);
+	  SEND_DATA(text_buff, &huart2);
+	  HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }
