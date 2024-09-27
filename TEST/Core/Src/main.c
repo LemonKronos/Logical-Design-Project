@@ -101,7 +101,9 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  SEND_DATA(text_buff, &huart2);
+	  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
 	  HAL_Delay(1000);
+	  HAL_GPIO_TogglePin(LD3_GPIO_Port, LD3_Pin);
   }
   /* USER CODE END 3 */
 }
