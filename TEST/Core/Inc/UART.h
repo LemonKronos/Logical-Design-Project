@@ -9,14 +9,27 @@
 #define INC_UART_H_
 
 #include "main.h"
+#include "global.h"
 
-#define TIME_OUT 20
+#define UART_ERROR_Port LD3_GPIO_Port
+#define UART_ERROR_Pin LD3_Pin
 
-enum ERROR_CODE{
-	OK,
-	SEND_FAILED
-};
+uint8_t flagUART_sended;
+uint8_t flagUART_received;
+uint8_t flagUART_demand;
+uint8_t UART_SEND_buffer[20];
+uint8_t UART_RECEIVE_buffer[20];
 
-enum ERROR_CODE SEND_DATA(uint8_t* text_buff, UART_HandleTypeDef* gate);
+void scheduleSendUART(UART_HandleTypeDef* gate);
+
+void prepareSendData();
+
+ERROR_CODE sendUART(uint8_t* UART_SEND_buffer, UART_HandleTypeDef* gate);
+
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart);
+
+void receiveUART(uint8_t* UART_RECEIVE_buffer, UART_HandleTypeDef* gate);
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 
 #endif /* INC_UART_H_ */

@@ -1,0 +1,2 @@
+debouce for DHT20 sensor ???
+debounce for signal???(send 2 time, only valid when their are the same)
