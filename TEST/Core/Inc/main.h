@@ -67,10 +67,12 @@ void Error_Handler(void);
 #define USART_RX_GPIO_Port GPIOA
 #define LD2_Pin GPIO_PIN_5
 #define LD2_GPIO_Port GPIOA
-#define Time_Pin GPIO_PIN_6
-#define Time_GPIO_Port GPIOA
+#define Timer0_Pin GPIO_PIN_7
+#define Timer0_GPIO_Port GPIOA
 #define LD3_Pin GPIO_PIN_9
 #define LD3_GPIO_Port GPIOC
+#define Timer1_Pin GPIO_PIN_8
+#define Timer1_GPIO_Port GPIOA
 #define TMS_Pin GPIO_PIN_13
 #define TMS_GPIO_Port GPIOA
 #define TCK_Pin GPIO_PIN_14

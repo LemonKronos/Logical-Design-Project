@@ -22,8 +22,10 @@ Core/Src/I2C.o: ../Core/Src/I2C.c ../Core/Inc/I2C.h ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- ../Core/Inc/global.h ../Core/Inc/global.h
+ ../Core/Inc/global.h ../Core/Inc/global.h ../Core/Inc/timer.h
 
 ../Core/Inc/I2C.h:
 
@@ -75,8 +77,14 @@ Core/Src/I2C.o: ../Core/Src/I2C.c ../Core/Inc/I2C.h ../Core/Inc/main.h \
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
+
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
+
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 
 ../Core/Inc/global.h:
 
 ../Core/Inc/global.h:
+
+../Core/Inc/timer.h:

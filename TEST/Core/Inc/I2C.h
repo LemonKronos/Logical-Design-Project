@@ -11,8 +11,8 @@
 #include "main.h"
 #include "global.h"
 
-#define I2C_ERROR_Port LD2_GPIO_Port
-#define I2C_ERROR_Pin LD2_Pin
+#define I2C_ERROR_Port LD3_GPIO_Port
+#define I2C_ERROR_Pin LD3_Pin
 #define DHT20_ADDRESS 0x38
 
 uint8_t flagI2C_demand;

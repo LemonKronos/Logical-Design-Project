@@ -11,8 +11,21 @@
 #include "main.h"
 
 #define TIME_OUT 20
+
+//TIMER
+#define INTERRUPT_CYCLE 10
+#define NUMBER_OF_TIMER 4
 #define SEC 1000
 #define MIN 60000
+
+typedef struct {
+	uint32_t tick_count;
+	uint8_t timer_flag;
+}timer;
+
+uint8_t flag_timer_run;
+
+timer Timer[NUMBER_OF_TIMER];
 
 typedef enum ERROR_CODE{
 	SENDED,

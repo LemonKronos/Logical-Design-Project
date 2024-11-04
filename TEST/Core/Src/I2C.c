@@ -8,9 +8,10 @@
 #include "I2C.h"
 #include "global.h"
 #include "stm32f1xx_hal.h"
+#include "timer.h"
 
 void readSensor(I2C_HandleTypeDef* gate){
-	if(timer_flag[1] == 1 || flagI2C_demand == 1){
+	if(Timer[1].timer_flag == 1 || flagI2C_demand == 1){
 		if(flagI2C_received_DHT20 == 1 && readDHT20(gate) == RECEIVED){
 			//run normally
 			I2C_error = 0;
@@ -21,7 +22,7 @@ void readSensor(I2C_HandleTypeDef* gate){
 			I2C_error++;
 			if(I2C_error < 3){
 			// set timer read again 1 second after
-			set_timer(1 *SEC, &timer_flag[1]);
+			set_timer(1 *SEC, &Timer[1]);
 			}
 			else{
 			// failed 3 times, lit ERROR LED, hope and pray it work next time

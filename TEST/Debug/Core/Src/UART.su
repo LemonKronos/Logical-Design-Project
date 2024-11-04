@@ -1,0 +1,6 @@
+UART.c:13:6:scheduleSendUART	16	static
+UART.c:40:6:prepareSendData	16	static
+UART.c:46:12:sendUART	16	static
+UART.c:52:6:HAL_UART_TxCpltCallback	16	static
+UART.c:58:6:receiveUART	16	static
+UART.c:72:6:HAL_UART_RxCpltCallback	16	static

@@ -8,13 +8,14 @@
 #include "UART.h"
 #include "global.h"
 #include "string.h"
+#include "timer.h"
 
 void scheduleSendUART(UART_HandleTypeDef* gate){
-	if(timer_flag[0] == 1 || flagUART_demand == 1){
+	if(Timer[0].timer_flag == 1 || flagUART_demand == 1){
 		prepareSendData();
 		if(flagUART_sended == 1 && sendUART(UART_SEND_buffer, gate) == SENDED){
 			// set timer run normally
-			set_timer(5 *MIN, &timer_flag[0]);
+			set_timer(5 *MIN, &Timer[0]);
 			UART_error = 0;
 			HAL_GPIO_WritePin(UART_ERROR_Port, UART_ERROR_Pin, SET);
 			flagUART_demand = 0;
@@ -23,11 +24,11 @@ void scheduleSendUART(UART_HandleTypeDef* gate){
 			UART_error++;
 			if(UART_error < 3){
 				// set timer send again 1 second after
-				set_timer(1 *SEC, &timer_flag[0]);
+				set_timer(1 *SEC, &Timer[0]);
 			}
 			else{
 				// failed 3 times, lit ERROR LED, hope and pray it work next time
-				set_timer(5 *MIN, &timer_flag[0]);
+				set_timer(5 *MIN, &Timer[0]);
 				UART_error = 0;
 				HAL_GPIO_WritePin(UART_ERROR_Port, UART_ERROR_Pin, RESET);
 				flagUART_demand = 0;

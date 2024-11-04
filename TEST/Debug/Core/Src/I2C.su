@@ -1,0 +1,4 @@
+I2C.c:13:6:readSensor	16	static
+I2C.c:37:12:readDHT20	16	static
+I2C.c:44:6:extractDHT20Data	24	static
+I2C.c:53:6:HAL_I2C_MasterRxCpltCallback	16	static
