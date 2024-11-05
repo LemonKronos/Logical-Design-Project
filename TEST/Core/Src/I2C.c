@@ -14,6 +14,7 @@ void readSensor(I2C_HandleTypeDef* gate){
 	if(Timer[1].timer_flag == 1 || flagI2C_demand == 1){
 		if(flagI2C_received_DHT20 == 1 && readDHT20(gate) == RECEIVED){
 			//run normally
+			set_timer(1 *SEC, &Timer[1]);
 			I2C_error = 0;
 			HAL_GPIO_WritePin(I2C_ERROR_Port, I2C_ERROR_Pin, SET);
 			flagI2C_demand = 0;
